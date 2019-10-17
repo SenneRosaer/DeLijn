@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 			crossorigin="anonymous">
+
+	
+</head>
+<body>
+	
+	
+	
+	<main role="main">
+        <div>
+            <select id="Province">
+                <option value="1">Antwerpen</option>
+                <option value="2">Oost-Vlaanderen</option>
+                <option value="3">Vlaams-Brabant</option>
+                <option value="4">Limburg</option>
+                <option value="5">West-Vlaanderen</option>
+            </select>
+
+            <select id="Direction">
+                <option value="HEEN">Heen</option>
+                <option value="TERUG">Terug</option>
+            </select>
+            <label for="BusNumber">Bus nummer</label>
+            <input type="number" id="BusNumber">
+
+             <button id="Submit" type="button" onclick="onSubmitting()">Click Me!</button>
+        </div>
+
+
+        <div id="test">
+            looool
+        </div>
+	</main>
+	
+<script>
+    function onSubmitting(){
+        province = document.getElementById("Province").value;
+        direction = document.getElementById("Direction").value;
+        number = document.getElementById("BusNumber").value;
+
+
+        var newline = "/" + province.toString() + "/" + number.toString() + "/" + direction.toString();
+        alert("?");
+        $.getJSON(newline)
+    }
+
+    function testf(response){
+        document.getElementById("test").innerHTML = "reee"
+    }
+
+
+
+</script>
+</body>
+</html>
